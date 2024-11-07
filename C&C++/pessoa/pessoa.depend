@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1731004638 source:c:\users\rikic\programacao\josesantos\pessoa\main.cpp
+	<iostream>
+	<string>
+	<locale>
+	"Pessoa.h"
+
+1731015455 source:c:\users\rikic\programacao\josesantos\pessoa\src\pessoa.cpp
+	<iostream>
+	<string>
+	"Pessoa.h"
+
+1731015620 c:\users\rikic\programacao\josesantos\pessoa\include\pessoa.h
+	<iostream>
+	<string>
+
