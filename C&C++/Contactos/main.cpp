@@ -49,9 +49,9 @@ int main() {
     Listacontactos listaContactos;
 
     // ADICIONAR CONTACTOS ------------------------------
-    addContacto(listaContactos, "Jo„o", "12356789");
-    addContacto(listaContactos, "JosÈ", "987654321");
-    addContacto(listaContactos, "Ricardo", "192837465");
+    addContacto(listaContactos, "Ricardo", "12356789");
+    addContacto(listaContactos, "Jos√©", "987654321");
+    addContacto(listaContactos, "Jo√£o", "192837465");
 
     // DAR PRINT A LISTA DE CONTACTOS ------------------------------
     cout << "\n- Lista de Contactos -\n";
@@ -65,7 +65,7 @@ int main() {
     if(contactoEncontrado){
         cout << "\nContacto encontrado!\nNome - " << contactoEncontrado->nome << " | Telefone - " << contactoEncontrado->telefone << endl;
     }else{
-        cout << "Contacto " << nomeProcurado << " n„o encontrado!\n";
+        cout << "Contacto " << nomeProcurado << " n√£o encontrado!\n";
     }
 
     return 0;
