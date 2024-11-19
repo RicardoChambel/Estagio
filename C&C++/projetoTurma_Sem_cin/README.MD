@@ -1,2 +1,4 @@
 <h1>Useful Sources</h1>
-https://cplusplus.com/reference/cstdio/printf/
+<ul>
+  <li>https://cplusplus.com/reference/cstdio/printf/</li>
+</ul>
