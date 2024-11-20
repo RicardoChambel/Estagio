@@ -65,13 +65,17 @@ void addAluno(vector<Aluno> &alunos){
     string turma;
     int numero;
 
+    char buffer[200]; // * Novamente a variavel buffer
+
     printf("Nome do aluno -> ");
-    getline(cin, nome);
+    scanf(" %[^\n]", buffer);
+    nome = buffer;
 
     printf("Turma do aluno -> ");
-    getline(cin, turma);
+    scanf(" %[^\n]", buffer);
+    turma = buffer;
 
-    printf("Numero do aluno -> ");
+    printf("Número do aluno -> ");
     scanf("%d", &numero);
 
     if (!numeroDisponivel(alunos, turma, numero)) {
@@ -117,6 +121,8 @@ int main() {
     int numero;
 
     string escolha;
+    char buffer[200]; // TIve de fazer esta variavel porque o scanf não limpa os caracteres do buffer após um input.
+    // Também fiz a variavel noutras partes do código
 
     do{
         printf("-- Programa de Turmas --\n");
@@ -126,7 +132,8 @@ int main() {
         printf("[4] - Ordenar por turma\n");
         printf("[0] - Sair\n");
         printf("Escolha -> ");
-        getline(cin, escolha);
+        scanf("%[^\n]", buffer);
+        escolha = buffer;
         system("cls");
         if(escolha=="1"){
             printf("-- Adicionar Aluno --\n");
@@ -163,7 +170,7 @@ int main() {
             }
         }
         else if(escolha=="0"){
-            printf("\n- Até à próxima !!\n(ENTER para fechar)\n--------\n--------\n");
+            printf("\n- Até à próxima !!\n(ENTER para fechar)\n\n--------\n");
         }
         else{
             printf("\n- Opção inválida !!\n\n");
