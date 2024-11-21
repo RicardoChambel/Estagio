@@ -3,7 +3,7 @@
 
 #define T_SIZE 3
 
-void mostrarJogo(char tabuleiro[T_SIZE][T_SIZE]){
+void mostrarJogo(char (*tabuleiro)[T_SIZE]){
     printf("\n--- Jogo do Galo ---\n");
     printf("\n");
     for(int i = 0; i < T_SIZE; i++){ // i é a linha
@@ -19,7 +19,7 @@ void mostrarJogo(char tabuleiro[T_SIZE][T_SIZE]){
     }
     printf("\n");
 }
-void mostrarJogoLinha(char tabuleiro[T_SIZE][T_SIZE], int linha){
+void mostrarJogoLinha(char (*tabuleiro)[T_SIZE], int linha){
     printf("\n--- Jogo do Galo ---\n");
     printf("\n");
     for(int i = 0; i < T_SIZE; i++){ // i é a linha
@@ -48,7 +48,7 @@ void mostrarJogoLinha(char tabuleiro[T_SIZE][T_SIZE], int linha){
     printf("\n");
 }
 
-char checkVencedor(char tabuleiro[T_SIZE][T_SIZE]){
+char checkVencedor(char (*tabuleiro)[T_SIZE]){
     //Linhas
     for(int i = 0; i < T_SIZE; i++){
         if (tabuleiro[i][0] == tabuleiro[i][1] && tabuleiro[i][1] == tabuleiro[i][2] && tabuleiro[i][0] != ' '){
@@ -72,7 +72,7 @@ char checkVencedor(char tabuleiro[T_SIZE][T_SIZE]){
     return ' ';
 }
 
-bool checkEmpate(char tabuleiro[T_SIZE][T_SIZE]){
+bool checkEmpate(char (*tabuleiro)[T_SIZE]){
     for(int i = 0; i < T_SIZE; i++){
         for(int j = 0; j < T_SIZE; j++){
             if (tabuleiro[i][j] == ' '){
@@ -83,9 +83,11 @@ bool checkEmpate(char tabuleiro[T_SIZE][T_SIZE]){
     return true;
 }
 
-int main(){
-    setlocale(LC_ALL, "Portuguese");
+void setJogador(char *jogadorAtual){
+    *jogadorAtual = (*jogadorAtual == 'X') ? 'O' : 'X';
+}
 
+void jogar(){
     char jogo[T_SIZE][T_SIZE] = {
         {' ', ' ', ' '},
         {' ', ' ', ' '},
@@ -126,18 +128,29 @@ int main(){
 
         vencedor = checkVencedor(jogo);
 
-        if(jogadorAtual == 'X'){
-            jogadorAtual = 'O';
-        }else{
-            jogadorAtual='X';
-        }
+        setJogador(&jogadorAtual);
     }
 
     if(vencedor!= ' '){
-        printf("\n\n- O jogador %c venceu! -\n\n", vencedor);
+        printf("\n- Vencedor! -\n");
+        printf("\n> jogador %c !\n", vencedor);
     }else{
         printf("\n- Empate! -\n\n");
     }
+}
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    char again;
 
+    do {
+        jogar();
+
+        printf("\n\n- Jogar outra vez? (s/n) -\n");
+        printf("> ");
+        scanf(" %c", &again);
+        system("cls");
+    } while (again == 's' || again == 'S');
+
+    printf("\n--- Até à próxima! ---\n");
     return 0;
 }
