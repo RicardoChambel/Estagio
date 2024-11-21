@@ -72,7 +72,7 @@ char checkVencedor(char (*tabuleiro)[T_SIZE]){
     return ' ';
 }
 
-bool checkEmpate(char (*tabuleiro)[T_SIZE]){
+bool isEmpate(char (*tabuleiro)[T_SIZE]){
     for(int i = 0; i < T_SIZE; i++){
         for(int j = 0; j < T_SIZE; j++){
             if (tabuleiro[i][j] == ' '){
@@ -84,7 +84,11 @@ bool checkEmpate(char (*tabuleiro)[T_SIZE]){
 }
 
 void setJogador(char *jogadorAtual){
-    *jogadorAtual = (*jogadorAtual == 'X') ? 'O' : 'X';
+    if(*jogadorAtual=='X'){
+        *jogadorAtual='O';
+    }else{
+        *jogadorAtual='X';
+    }
 }
 
 void jogar(){
@@ -97,7 +101,7 @@ void jogar(){
     char jogadorAtual = 'X';
     char vencedor = ' ';
 
-    while (vencedor==' ' && !checkEmpate(jogo)) {
+    while (vencedor==' ' && !isEmpate(jogo)) {
 
         mostrarJogo(jogo);
 
