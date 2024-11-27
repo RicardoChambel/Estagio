@@ -7,7 +7,7 @@
 using namespace std;
 
 // VALIDAÇÕES ------------------------------------------
-bool isValidNome(string& nome) {
+bool isValidNome(string& nome){
     regex regexNome("^[A-Z][a-z]*( [A-Z][a-z]*)*$");
     //[A-Z] -> Começa com uma letra maiúscula
     //[a-z]* -> PODE(*) ser seguido de 0 ou mais letras minúsculas
@@ -15,7 +15,7 @@ bool isValidNome(string& nome) {
     return regex_match(nome, regexNome);
 }
 
-bool isValidData(string& data) {
+bool isValidData(string& data){
     regex dateRegex("^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}$");
     //(0[1-9]|[12][0-9]|3[01]) -> Dia de 01 a 09 OU 10 a 19 OU 20 a 29 OU 30 a 31
     //(0[1-9]|1[0-2]) -> Mês de 01 a 09 OU 10 a 12
@@ -24,31 +24,31 @@ bool isValidData(string& data) {
 }
 
 // GUARDAR NO FICHEIRO ------------------------------------------
-void guardarDados(string& nome, string& dataNascimento, string& bi) {
+void guardarDados(string& nome, string& dataNascimento, string& bi){
     FILE* ficheiro = fopen("C:/Windows/Temp/dados.txt", "a");
 
-    if (ficheiro != nullptr) {
+    if(ficheiro != nullptr){
         fprintf(ficheiro, "----\n");
         fprintf(ficheiro, "> Nome: %s\n", nome.c_str());
         fprintf(ficheiro, "> Data de Nascimento(DD/MM/AAAA): %s\n", dataNascimento.c_str());
         fprintf(ficheiro, "> BI: %s\n", bi.c_str());
         fclose(ficheiro);
         cout << "\n- Informações guardadas com sucesso! -\n" << endl;
-    } else {
+    }else{
         cout << "\n- Erro ao escrever no ficheiro! -\n" << endl;
     }
 }
 
 // LER DO FICHEIRO ------------------------------------------
-void carregarDados(vector<string>& nomes, vector<string>& datasNascimento, vector<string>& bis) {
+void carregarDados(vector<string>& nomes, vector<string>& datasNascimento, vector<string>& bis){
     FILE* ficheiro = fopen("C:/Windows/Temp/dados.txt", "r");
     char buffer[256];
     string nome, dataNascimento, bi;
 
-    if (ficheiro != nullptr) {
-        while (fgets(buffer, sizeof(buffer), ficheiro)) {
+    if(ficheiro != nullptr){
+        while(fgets(buffer, sizeof(buffer), ficheiro)){
             string line(buffer);
-            if (line.back() == '\n') {
+            if(line.back() == '\n'){
                 line.pop_back();
             }
 
@@ -86,7 +86,7 @@ void carregarDados(vector<string>& nomes, vector<string>& datasNascimento, vecto
         fclose(ficheiro);
         cout << "\n- Dados do ficheiro guardados nos respetivos arrays -\n" << endl;
 
-    } else{
+    }else{
         FILE* ficheiro = fopen("C:/Windows/Temp/dados.txt", "w");
         fclose(ficheiro);
         cout << "\n- Ficheiro novo criado -\n" << endl;
@@ -94,7 +94,7 @@ void carregarDados(vector<string>& nomes, vector<string>& datasNascimento, vecto
 }
 
 // MOSTRAR DADOS DOS ARRAYS -----------------------------
-void mostrarDados(vector<string>& nomes, vector<string>& datasNascimento, vector<string>& bis) {
+void mostrarDados(vector<string>& nomes, vector<string>& datasNascimento, vector<string>& bis){
     if(nomes.empty()){
         cout << "\n- Não há dados guardados! -\n" << endl;
         return;
@@ -168,7 +168,7 @@ void novosDados(vector<string>& nomes, vector<string>& datasNascimento, vector<s
 
 }
 
-int main() {
+int main(){
     setlocale(LC_ALL, "Portuguese");
 
     vector<string> nomes, datasNascimento, bis;
