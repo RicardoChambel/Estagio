@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/850a9c541a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="form.php" method="post">
+            <div class="container-div">
+                <label for="nome"><i class="fa-solid fa-user"></i> Nome</label>
+                <input placeholder="Nome" type="text" name="nome" id="nome" autocomplete="off" required>
+            </div>
+            <div class="container-div">
+                <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+                <input placeholder="Email" type="email" name="email" id="email" autocomplete="off" required>
+            </div>
+            <div class="container-div">
+                <label for="password"><i class="fa-solid fa-key"></i> Palavra-Passe</label>
+                <input placeholder="Palavra-Passe" type="password" minlength="5" name="password" id="password" autocomplete="off" required>
+            </div>            
+            <div class="container-div">
+                <label for="tele"><i class="fa-solid fa-phone"></i> Nº Telemóvel <span style="letter-spacing: 0;">(+351)</span></label>
+                <input placeholder="Telefone/Telemóvel (000000000)" type="tel" maxlength="9" minlength="9" name="tele" id="tele" autocomplete="off" required>
+            </div>
+            <div class="container-div">
+                <label for="bi"><i class="fa-solid fa-address-card"></i> Nº Cartão de Cidadão</label>
+                <input placeholder="CC (00000000 0)" type="tel" maxlength="9" minlength="9" name="bi" id="bi" autocomplete="off" required>
+            </div>
+            <div class="container-div">
+                <label for="cidade"><i class="fa-solid fa-building"></i> Cidade</label>
+                <input placeholder="Cidade" type="text" name="cidade" id="cidade" autocomplete="off" required>
+            </div>
+            <div class="container-div">
+                <label for="morada"><i class="fa-solid fa-location-dot"></i> Morada</label>
+                <input placeholder="Morada" type="text" name="morada" id="morada" autocomplete="off" required>
+            </div>
+            <div class="container-div">
+                <button type="submit" formaction="">Adicionar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="tabela">
+        <div class="tabela-main">
+            <table>
+                <tr class="tabela-main-header">
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Palavra-Passe</th>
+                    <th>Telemóvel</th>
+                    <th>CC</th>
+                    <th>Cidade</th>
+                    <th>Morada</th>
+                </tr>
+                <tr>
+                    <td>Teste</td>
+                    <td>teste@gmail</td>
+                    <td>teste123</td>
+                    <td>987654321</td>
+                    <td>12345678</td>
+                    <td>Teste</td>
+                    <td>Teste n0</td>
+                </tr>
+                <tr>
+                    <td>Teste</td>
+                    <td>teste@gmail</td>
+                    <td>teste123</td>
+                    <td>987654321</td>
+                    <td>12345678</td>
+                    <td>Teste</td>
+                    <td>Teste n0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
