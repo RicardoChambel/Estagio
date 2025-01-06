@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2.5px;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+
+    font-size: 1.6vh;
+    line-height: 1.6;
+
+    background: url(bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+}
+
+/* CONTAINER DA ESQUERDA ------------------------------------------------------*/
+
+.container{
+    transition: .5s;
+    animation: introContainer 1s;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 30vh;
+    width: 45vh;
+    padding: 2vh;
+    border-radius: 0 5vh 0 5vh;
+
+    background: transparent;
+    backdrop-filter: blur(2vh);
+    box-shadow: 0 0 .1vh .25vh rgba(255, 255, 255, 0.5);
+}
+
+.container-div{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-size: 2vh;
+}
+
+.container-div label{
+    font-weight: bold;
+    letter-spacing: .5vh;
+}
+
+.container-div input{
+    color: white;
+    outline: none;
+    transition: .5s;
+    padding: 1vh;
+    font-size: 2vh;
+    border-radius: 0;
+    border: none;
+    border-bottom: .2vh solid white;
+    border-radius: 0 0 0 1vh;
+    background: transparent;
+    box-shadow: 0vh .3vh .2vh -.2vh rgba(0, 0, 0, 0);
+}
+.container-div input:valid{
+    border-bottom-color: rgb(161, 255, 161);
+    box-shadow: 0vh .3vh .2vh -.2vh rgb(161, 255, 161);
+}
+
+.container-div input::placeholder{
+    transition: .5s;
+    color: rgba(255, 255, 255, 0.2);
+}
+.container-div input:focus::placeholder{
+    color: transparent;
+}
+
+.container-div button{
+    transition: .5s;
+    padding: 1vh;
+    font-size: 2vh;
+    border-radius: 2vh 0 2vh 0;
+    border: none;
+    color: black;
+    background: rgba(255, 255, 255);
+    border: .3vh solid white;
+    cursor: pointer; 
+}
+.container-div button:hover{
+    color: white;
+    background: orangered;
+    border-radius: 0 2vh 0 2vh;
+}
+
+
+
+/* CONTAINER DA DIREITA ------------------------------------------------------*/
+.tabela{
+    transition: .5s;
+    animation: introTabela 1s;
+    position: absolute;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 32.5vh;
+    width: 75vh;
+    height: 70vh;
+    padding: 2vh;
+    border-radius: 1vh;
+
+    background: transparent;
+    backdrop-filter: blur(2vh);
+    box-shadow: 0 0 .1vh .25vh rgba(255, 255, 255, 0.5);
+}
+
+.tabela-main table{
+    display:table;
+    table-layout: auto;
+    width: 100%;
+    padding: 1vh;
+    border-radius: .5vh;    
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2vh);
+    border: .1vh solid rgba(255, 255, 255, 0.3);
+}
+
+.tabela-main-header{
+    border: .5vh solid rgba(255, 255, 255, 0.3);
+}
+
+.tabela-main table tr{
+    text-align: center;
+}
+
+
+/* ANIMAÇÕES --------------------------------------------------------------- */
+@keyframes introContainer {
+    from{
+        left: 20%;
+    }
+}
+@keyframes introTabela {
+    from{
+        left: 90%;
+    }
+}
