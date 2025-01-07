@@ -60,6 +60,7 @@ function loadTableData() {
         dataTable.appendChild(row);
     });
     document.getElementById('updateBtn').style.display="none";// ESCONDER O BOTÃO DE ATUALIZAR
+    document.getElementById('cancelarBtn').style.display="none";// ESCONDER O BOTÃO DE CANCELAR
 }
 
 
@@ -85,6 +86,7 @@ function removeData(index){
     form = document.getElementById('form');
     form.reset();// APAGAR O FORMULÁRIO
     document.getElementById('updateBtn').style.display="none";// ESCONDER O BOTÃO DE ATUALIZAR
+    document.getElementById('cancelarBtn').style.display="none";// ESCONDER O BOTÃO DE CANCELAR
 
 }
 
@@ -108,8 +110,9 @@ function fillFormWithData(index) {
     // ADICIONAR UM ATRIBUTO AO FORMULÁRIO PARA INDICAR QUE ESTÁ A EDITAR DADOS DE UMA PESSOA SELECIONADA
     document.getElementById('form').setAttribute('data-edit-index', index);
 
-    // MOSTRAR O BOTÃO DE ATUALIZAR
+    // MOSTRAR O BOTÃO DE ATUALIZAR E O BOTÃO DE CANCELAR
     document.getElementById('updateBtn').style.display="block";
+    document.getElementById('cancelarBtn').style.display="block";
 }
 
 // GUARDAR DADOS NO LOCALSTORAGE -----------------------------------------------
@@ -145,6 +148,7 @@ function saveData(event) {
 
     if (isUpdate && editIndex !== null) { // SE O FORM ESTIVER A EDITAR E O BOTÃO USADO FOI O 'Atualizar'
         document.getElementById('updateBtn').style.display="none";// ESCONDER O BOTÃO DE ATUALIZAR
+        document.getElementById('cancelarBtn').style.display="none";// ESCONDER O BOTÃO DE CANCELAR
         data[editIndex] = newData; // SUBSTITUIR OS DADOS DA PESSOA
         form.removeAttribute('data-edit-index'); // REMOVER O ATRIBUTO DE ESTAR A EDITAR DADOS DE UMA PESSOA AO FORM
 
@@ -167,6 +171,9 @@ function saveData(event) {
 
 // ADICIONAR LISTENER PARA OS BOTÕES DE SUBMIT DO FORMULÁRIO
 document.getElementById('form').addEventListener('submit', saveData);
+// APAGAR O FORMULÁRIO AO CLICAR NO BOTÃO DE CANCELAR
+form = document.getElementById('form');
+document.getElementById('cancelarBtn').addEventListener('click', form.reset);
 
 // CARREGAR DADOS NA TABELA QUANDO A PÁGINA CARREGA
 document.addEventListener('DOMContentLoaded', loadTableData);
