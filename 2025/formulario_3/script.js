@@ -75,6 +75,10 @@ function removeData(index){
 
     localStorage.setItem('formData', JSON.stringify(data)); // ATUALIZAR O LOCALSTORAGE
 
+    if(index==0 && data.length==0 ){ // SE FOR O UNICO ELEMENTO NA TABELA
+        window.location.reload(); // RECARREGAR A PÁGINA
+    }
+
     loadTableData(); // CARREGAR OUTRA VEZ OS DADOS NA TABELA
 
     
