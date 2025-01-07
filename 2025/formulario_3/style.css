@@ -111,6 +111,7 @@ body{
     border-radius: 0 0 0 2vh;
 }
 
+/* BOTÕES ATUALIZAR | ADICIONAR | CANCELAR ----------*/
 .container-div-buttons{
     display: flex;
     flex-direction: row;
@@ -118,40 +119,43 @@ body{
     margin-top: 2vh;
 }
 
+.container-div-buttons .button{   
+    transition: .5s;
+    padding: 1vh;
+    width: 30%;
+    font-size: 1.8vh;
+    border: none;
+    color: black;
+    background: rgba(255, 255, 255);
+    border: .3vh solid white;
+    cursor: pointer; 
+}
+
+.container-div-buttons .button-cancelar{
+    display: none;
+    border-radius: .5vh .5vh .5vh .5vh;
+    color: red;
+    scale: .8;
+}
 .container-div-buttons .button-atualizar{
     display: none;
-
-    transition: .5s;
-    padding: 1vh;
-    width: 40%;
-    font-size: 2vh;
     border-radius: 2vh 0 2vh 0;
-    border: none;
-    color: black;
-    background: rgba(255, 255, 255);
-    border: .3vh solid white;
-    cursor: pointer; 
 }
-
-.container-div .button-adicionar{
-    transition: .5s;
-    padding: 1vh;
-    width: 40%;
-    font-size: 2vh;
+.container-div-buttons .button-adicionar{
     border-radius: 0 2vh 0 2vh;
-    border: none;
-    color: black;
-    background: rgba(255, 255, 255);
-    border: .3vh solid white;
-    cursor: pointer; 
 }
 
+
+.container-div-buttons .button-cancelar:hover{
+    border-radius: 2vh 2vh 2vh 2vh;
+    color: white;
+    background: red;
+}
 .container-div .button-atualizar:hover{
     color: white;
     background: var(--contraste);
     border-radius: 0 2vh 0 2vh;
 }
-
 .container-div .button-adicionar:hover{
     color: white;
     background: var(--contraste);
@@ -253,7 +257,7 @@ body{
 /* MEDIA QUERIES ----------------------------------------------------------- */
 
 /* Para telas com largura menor que 1310px */
-@media(max-width: 1500px) {
+@media (max-width: 1500px) {
 
     .container{
         left: 20%;
@@ -266,7 +270,7 @@ body{
 }
 
 /* Para telas com largura menor que 1100px */
-@media(max-width: 1160px){
+@media (max-width: 1160px) {
 
     body{
         height: 200vh;
@@ -297,7 +301,7 @@ body{
 }
 
 /* Para telas com largura menor que 768px */
-@media(max-width: 768px){
+@media (max-width: 768px) {
 
     .container{
         left: 50%;
@@ -311,13 +315,13 @@ body{
         border-radius: 0;
     }
 
-    .container-div input{
+    .container-div input {
         font-size: 4vw;
     }
 }
 
 /* Para telas com largura menor que 480px */
-@media(max-width: 480px){
+@media (max-width: 480px) {
     .container{
         width: 90vw;
     }
