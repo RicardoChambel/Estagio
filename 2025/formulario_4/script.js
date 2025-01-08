@@ -3,8 +3,6 @@ function loadTableData() {
     // (PARA DEBUG) ****
     console.log("!! LOADTABLEDATA !! ");
 
-
-
     const dataTable = document.getElementById('dataTable');
     const data = JSON.parse(localStorage.getItem('formData')) || [];
 
@@ -20,10 +18,10 @@ function loadTableData() {
             <th>ID</th>
             <th>Nome</th>
             <th>Email</th>
-            <th>genero</th>
             <th>Telemóvel</th>
             <th>CC</th>
             <th>localidade</th>
+            <th>genero</th>
         </tr>
     `;
 
@@ -43,10 +41,10 @@ function loadTableData() {
             <td>${index}</td>
             <td>${item.nome}</td>
             <td>${item.email}</td>
-            <td>${item.genero}</td>
             <td>${item.tele}</td>
             <td>${item.cc}</td>
             <td>${item.localidade}</td>
+            <td>${item.genero}</td>
         `;
 
         // Adicionar o listener para o botão de remover

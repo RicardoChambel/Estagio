@@ -187,41 +187,6 @@ body{
     height: 2vh;
 }
 
-input[type='radio']:after {
-    transition: .5s;
-    position: relative;
-    content: '';
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    height: 150%;
-    border-radius: 5px;
-    font-size: 2vh;
-    top: -5px;
-    left: -5px;
-    font-weight: bolder;
-    color: white;
-    background-color: #d1d3d1;
-    border: 2px solid white;
-}
-input[type='radio']:hover:after {
-    background-color: var(--contraste);
-    border: 2px solid white;
-}
-
-input[type='radio']:active:after {
-    transition: .1s;
-    scale: .8;
-    background-color: var(--contraste);
-    border: 2px solid white;
-}
-
-input[type='radio']:checked:after {
-    border-radius: 15px;
-    background-color: rgb(60, 255, 60);
-    border: 2px solid white;
-}
-
 /* CONTAINER DA DIREITA ------------------------------------------------------*/
 .tabela{
     transition: .2s;
